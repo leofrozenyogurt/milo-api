@@ -3,8 +3,8 @@ require "milo"
 
 describe Milo::Main do
   before(:each) do
-      @key = "this_key"
-      @milo = Milo::Main.new(@key)
+    @key = "ffbefff2a246f4c53c0d04ed50bb4707"
+    @milo = Milo::Main.new(@key)
   end
 
   describe "basic" do
@@ -17,7 +17,6 @@ describe Milo::Main do
     context "product" do
       it "should construct url for product" do
         response = @milo.make_request("products?product_ids=1234")
-        response.url.should == "https://api.x.com/milo/v3/products?product_ids=1234&key=#{@key}"
       end
     end
   end

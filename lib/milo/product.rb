@@ -19,6 +19,12 @@ module Milo
       make_request(base)
     end
 
+    def get_product_by_postal_code(code, options = {})
+      base = "products?postal_code=#{code}&q=#{options[:tag]}&show_defaults=#{options[:defaults]}"
+      apply_flag(base, "&", options[:show])
+      make_request(base)
+    end
+
     private
 
     def apply_flag(base, identifier, flag)
